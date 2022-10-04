@@ -4,7 +4,7 @@ In this task, you have to implement a todo list site.
 
 ## Steps for implementation
 
-1. Create new GitHub *public* repo;
+1. Create pull request;
 2. Switch to your branch;
 3. Implement Todo List using Django;
 4. Create Pull Request from your_branch to main branch;
