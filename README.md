@@ -8,8 +8,6 @@ In this task, you have to implement a todo list site.
 2. Switch to your branch;
 3. Implement Todo List using Django;
 4. Create Pull Request from your_branch to main branch;
-5. Attach images of your interface (all pages) to the PR (important!). Do not attach images as links, put them directly (also important);
-6. Attach link to the PR as the solution for this task.
 
 ## Task
 
