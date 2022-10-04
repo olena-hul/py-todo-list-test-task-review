@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Tags</h1>
+    <button style="float: right; margin-right: 25px; bottom: 50px; position:relative;" class="btn btn-primary">
+        <a role="button" style="color: white"
+           href="{% url 'todo:tag-create'%}">Add</a>
+    </button>
+
+    {% if tag_list %}
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            {% for tag in tag_list %}
+                <tr>
+                    <td>{{ tag.name }}</td>
+                    <td>
+                        <button style="background: gray" class="btn"><a role="button" style="color: white"
+                                                                        href="{% url 'todo:task_change_status' pk=tag.id %}">Update</a>
+                        </button>
+                    </td>
+                    <td>
+                        <button style="background: gray" class="btn"><a role="button" style="color: white"
+                                                                        href="{% url 'todo:task_change_status' pk=tag.id %}">Delete</a>
+                        </button>
+                    </td>
+
+                </tr>
+            {% endfor %}
+
+        </table>
+
+    {% else %}
+        <p>There are no todos</p>
+    {% endif %}
+
+{% endblock %}
