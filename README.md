@@ -5,9 +5,9 @@ In this task, you have to implement a todo list site.
 ## Steps for implementation
 
 1. Create new GitHub *public* repo;
-2. Switch to dev branch;
-3. Implement Todo List project;
-4. Create Pull Request from dev to main branch;
+2. Switch to your branch;
+3. Implement Todo List using Django;
+4. Create Pull Request from your_branch to main branch;
 5. Attach images of your interface (all pages) to the PR (important!). Do not attach images as links, put them directly (also important);
 6. Attach link to the PR as the solution for this task.
 
@@ -53,4 +53,4 @@ Of course, pages for adding tags and tasks must be also implemented.
 A tag list page should look like this:
 ![](https://mate-academy-images.s3.eu-central-1.amazonaws.com/python_exam_second_scr_1c4563cb17.png)
 
-That's all!
+**Everybody should be able to easily clone and run your project!**
