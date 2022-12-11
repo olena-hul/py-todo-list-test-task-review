@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>TODO list</h1>
+    <button style="float: right; bottom: 50px; position: relative" class="btn btn-primary"
+            type="submit"
+            value="submit">
+        <a role="button" style="color: white"
+           href="{% url 'todo:task-create' %}">Add task</a>
+    </button>
+    <br>
+
+    {% if task_list %}
+        {% for task in task_list %}
+            <br>
+            <div class="form-group">
+                <b>{{ task.content }}</b>
+
+
+                {% if task.is_done %}
+                    <b><span class="done">Done</span></b>
+                    <form method="post" action="{% url 'todo:task_change_status' pk=task.id %}">
+                        {% csrf_token %}
+
+                        <button style="float: right" type="submit" class="btn btn-blurred">
+                            Undo
+                        </button>
+
+                    </form>
+
+                {% else %}
+                    <b><span class="not-done">Not done</span></b>
+
+                    <form method="post" action="{% url 'todo:task_change_status' pk=task.id %}">
+                        {% csrf_token %}
+                        <button style="float: right" type="submit" class="btn btn-success">
+                            Complete
+                        </button>
+                    </form>
+
+                {% endif %}
+
+            </div>
+            <div class="form-group">
+                Created: {{ task.created_at }} {% if task.deadline %}
+                <span class="text-deadline">Deadline: {{ task.deadline }}</span>
+            {% endif %}
+            </div>
+            <div class="form-group">
+                <b><span class="text-tag"> Tags:
+                    {% for tag in task.tags.all %}
+                        {{ tag.name }}
+                    {% endfor %}
+                </span></b>
+
+
+                <a href="{% url 'todo:task-update' pk=task.id %}">Update</a>
+                <a href="{% url 'todo:task-delete' pk=task.id %}">Delete</a>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <p>There are no todos</p>
+    {% endif %}
+
+
+
+{% endblock %}

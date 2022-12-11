@@ -1,0 +1,24 @@
+body {
+    margin-top: 20px;
+}
+
+.btn-blurred {
+    background-color: grey;
+    color: white;
+}
+
+.done {
+    color: green;
+}
+
+.not-done {
+    color: red;
+}
+
+.text-tag {
+    color: grey;
+}
+
+.text-deadline {
+    color: #de5416;
+}
